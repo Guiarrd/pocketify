@@ -1,0 +1,11 @@
+{
+  "name": "pocketify",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "4.2.2",
+    "bulma": "0.7.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.1"
+  }
+}

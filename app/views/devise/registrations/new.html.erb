@@ -1,0 +1,43 @@
+<section class="section has-text-white has-text-centered login">
+  <h2 class="is-size-2 has-text-weight-bold">Cadastre-se</h2>
+  <br />
+  <div class="columns is-mobile is-centered">
+    <div class="column is-full-mobile is-half-desktop">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="field">
+          <p class="control">
+            <%= f.text_field :name, class: "input is-medium", autofocus: true, autocomplete: "off", placeholder: "Nome Completo" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <%= f.email_field :email, class: "input is-medium", autocomplete: "off", placeholder: "E-mail" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <%= f.password_field :password, class: "input is-medium", autocomplete: "off", placeholder: "Senha (mínimo 6 caracteres)" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <%= f.password_field :password_confirmation, class: "input is-medium", autocomplete: "off", placeholder: "Confirmar Senha" %>
+          </p>
+        </div>
+
+        <br />
+        
+        <div class="field">
+          <p class="control">
+            <%= f.submit "Cadastrar Agora", class: "button is-primary is-fullwidth is-rounded is-medium" %>
+          </p>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>

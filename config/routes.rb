@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'albums/show'
-  get 'artists/show'
-  get 'categories/show'
-  get 'search/index'
-  get 'search/new'
   devise_for :users
 
   # dá pra ter mais de uma rota root, desde que sejam utilizados
@@ -14,6 +9,11 @@ Rails.application.routes.draw do
     resources :categories, only: :show
     resources :artists, only: :show
     resources :albums, only: :show
+    resources :favorites, only: :index
+    resources :songs, only: [] do
+      post "/favorite", to: "favorites#create", on: :member, defaults: { format: :js, favoritable_type: 'Song' }
+      delete "/favorite", to: "favorites#destroy", on: :member, defaults: { format: :js, favoritable_type: 'Song' }
+    end
   end
 
   unauthenticated :user do

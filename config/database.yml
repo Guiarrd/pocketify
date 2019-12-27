@@ -14,5 +14,5 @@ test:
 production:
   <<: *default
   database: pocketify_production
-  username: guilherme
-  password: <%= ENV['GUILHERME_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= ENV['POSTGRES_DATABASE_PASSWORD'] %>

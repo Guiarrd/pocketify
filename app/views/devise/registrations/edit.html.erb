@@ -1,0 +1,56 @@
+<section class="section has-text-white has-text-centered login">
+  <h2 class="is-size-2 has-text-weight-bold">Editar Perfil</h2>
+  <br />
+  <div class="columns is-mobile is-centered">
+    <div class="column is-full-mobile is-half-desktop">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="field">
+          <p class="control">
+            <%= f.text_field :name, class: "input is-medium", autofocus: true, autocomplete: "off", placeholder: "Nome Completo" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <%= f.email_field :email, class: "input is-medium", autocomplete: "off", placeholder: "E-mail" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <small class="has-text-primary">Deixe em branco se não quiser alterá-la</small>
+            <%= f.password_field :password, class: "input is-medium", autocomplete: "off", placeholder: "Nova Senha (mínimo 6 caracteres)" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <%= f.password_field :password_confirmation, class: "input is-medium", autocomplete: "off", placeholder: "Confirmar Senha" %>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <small class="has-text-primary">Necessário para confirmar as alterações</small>
+            <%= f.password_field :current_password, class: "input is-medium", autocomplete: "off", placeholder: "Senha Atual" %>
+          </p>
+        </div>
+
+        <br />
+
+        <div class="field">
+          <p class="control">
+            <%= f.submit "Atualizar Dados", class: "button is-primary is-fullwidth is-rounded is-medium" %>
+          </p>
+        </div>
+      <% end %>
+
+      <div class="container devise-links">
+        <%= button_to "Excluir Conta", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, 
+          method: :delete, class: "button is-danger is-fullwidth is-rounded is-medium" %>
+      </div>
+
+      <div class="container devise-links">
+        <%= link_to "Voltar", :back, class: "button is-fullwidth is-rounded is-medium"  %>
+      </div>
+      <br />

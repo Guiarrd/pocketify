@@ -16,7 +16,7 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-gem 'devise', '~> 4.5.0'
+gem 'devise', '~> 4.7.1'
 gem 'serviceworker-rails'
 gem 'pg', '>= 0.18', '< 2.0'
 
